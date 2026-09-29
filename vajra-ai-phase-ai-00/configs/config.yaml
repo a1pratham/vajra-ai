@@ -1,0 +1,32 @@
+# VAJRA-AI — central configuration
+# Phase AI-0 only uses: project, seed, device.
+# The rest (dataset, sequence, model, train) are placeholders here so later
+# phases can extend this same file without renaming keys.
+
+project:
+  name: "vajra-ai"
+  phase: "AI-0"
+  data_dir: "data"
+  output_dir: "outputs"
+
+seed: 42
+
+device:
+  prefer: "cuda"   # falls back to cpu automatically if cuda is unavailable
+
+# --- placeholders for future phases (not used yet) ---
+dataset:
+  name: "sevir"
+  subset_size: null        # set in Phase AI-1
+
+sequence:
+  input_frames: 6           # 30 min at 5-min SEVIR cadence
+  output_frames: 12         # 60 min at 5-min SEVIR cadence
+  image_size: 128
+
+train:
+  batch_size: 8
+  learning_rate: 0.001
+  epochs: 20
+  num_workers: 2
+  checkpoint_dir: "outputs/checkpoints"

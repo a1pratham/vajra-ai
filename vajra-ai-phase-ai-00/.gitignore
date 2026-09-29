@@ -1,0 +1,31 @@
+# Datasets — never commit
+data/*
+!data/README.md
+
+# Model checkpoints / large outputs
+outputs/*
+!outputs/.gitkeep
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.nc
+
+# Secrets
+.env
+*.key
+credentials.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Colab / Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
